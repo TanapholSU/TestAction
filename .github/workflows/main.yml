@@ -6,9 +6,9 @@ on:
   # pull_request:
   #   branches: [develop]
   push:
-    branches: [dev]
+    branches: [main]
     paths:
-      - '*'
+      - 'test.py'
       - '*/**'
 
 jobs:
