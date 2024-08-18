@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call_composite_action
-        uses: TanapholSU/TestAction/.github/actions/prepare_env
+        uses: ./.github/actions/prepare_env
 
       - uses: actions/checkout@v4
       - name: Run
