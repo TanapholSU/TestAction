@@ -17,10 +17,11 @@ jobs:
   build_docker:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      
       - name: call_composite_action
         uses: ./.github/actions/prepare_env
 
-      - uses: actions/checkout@v4
       - name: Run
         run: |
           python3 test.py
