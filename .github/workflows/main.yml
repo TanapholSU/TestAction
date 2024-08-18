@@ -17,11 +17,13 @@ jobs:
   build_docker:
     runs-on: self-hosted
     steps:
+      - uses: TanapholSU/TestAction/.github/workflows/test.yml@main
+        id: composite
+        name: Calling composite action
+        
+
       - uses: actions/checkout@v4
       - name: Run
         run: |
           python3 test.py
 
-      - id: composite
-        name: Calling composite action
-        uses: TanapholSU/TestAction/.github/workflows/test.yml@main
