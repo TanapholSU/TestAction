@@ -1,7 +1,6 @@
-name: 'Hello World'
-description: 'Greet someone'
-outputs:
-      foo: ${{ steps.poetry.outputs.text}}
+on: 
+  workflow_dispatch:
+  
 runs:
   using: "composite"
   steps:
