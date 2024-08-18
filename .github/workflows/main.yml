@@ -21,4 +21,7 @@ jobs:
       - name: Run
         run: |
           python3 test.py
-      
+
+      - id: composite
+        name: Calling composite action
+        uses: TanapholSU/TestAction/.github/workflows/test.yml@main
