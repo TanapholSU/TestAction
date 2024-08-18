@@ -15,7 +15,7 @@ jobs:
   # start ec2 instances (future)
   # prepare env and build_docker image
   build_docker:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: call_composite_action
         uses: TanapholSU/TestAction/.github/actions/test.yml@main
