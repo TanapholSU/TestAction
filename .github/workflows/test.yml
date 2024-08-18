@@ -1,0 +1,15 @@
+name: 'Hello World'
+description: 'Greet someone'
+outputs:
+      foo: ${{ steps.poetry.outputs.text}}
+runs:
+  using: "composite"
+  steps:
+    - name: Set Greeting
+      run: echo "Hello world."
+      shell: bash
+
+    - name: Set Greeting 2
+      id: poetry
+      run: echo 1  >> $GITHUB_OUTPUT;
+      shell: bash
