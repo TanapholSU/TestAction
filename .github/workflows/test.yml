@@ -1,11 +1,10 @@
 name: Release
 on:
   workflow_run:
-    workflows: [CI]
+    workflows: [build]
     branches: [main]
     types: 
       - completed
-
 
 jobs:
   test:
@@ -13,3 +12,5 @@ jobs:
     steps:
       - name: echo
         run: echo "hello world"
+
+
