@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: call_composite_action
-        uses: ./.github/actions/test.yml
+        uses: ./.github/actions/prepare_env
 
       - name: Run
         run: |
