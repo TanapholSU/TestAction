@@ -1,4 +1,5 @@
-permissions: write-all
+permissions:
+  Administration: write 
 
 name: test
 on: [ push ]
