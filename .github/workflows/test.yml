@@ -6,14 +6,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      CLEANUP: true
+      CLEANUP: false
     steps:
       - name: echo
         run: |
           if [ "$CLEANUP" = "true" ]; then
             echo "cleanup is true"
           else
-            echo "cleanup is false"
+            echo "cleanup is false $CLEANUP"
           fi
         shell: bash
 
