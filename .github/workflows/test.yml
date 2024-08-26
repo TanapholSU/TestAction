@@ -1,5 +1,3 @@
-permissions:
-  Administration: write 
 
 name: test
 on: [ push ]
