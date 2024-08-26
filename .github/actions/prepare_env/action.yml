@@ -4,24 +4,28 @@ description: Composite Action to greet someone
 on:
   workflow_dispatch:
 
-# inputs:
-#   who-to-greet:
-#     required: false
-#     default: World
-#     description: who to greet
+inputs:
+  CLEANUP:
+    required: true
+    default: true
+    description: who to greet
 
 runs:
   using: composite
   steps:
-    - name: setup python 3.12
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
+    - name: Deploy enclave 
+      env:
+        CLEANUP: '${{ inputs.CLEANUP }}'
+      run: |
+        if [ "$CLEANUP" = "true" ]; then
+          echo "true"
+        else
+          echo "false !!! $CLEANUP" 
+        fi
+      shell: bash
+
         
     - name: greet
       run: echo "Hello world"
       shell: bash
 
-    - name: greet2
-      run: echo "Hello world 2"
-      shell: bash
