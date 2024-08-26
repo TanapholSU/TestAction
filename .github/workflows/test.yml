@@ -8,14 +8,10 @@ jobs:
     env:
       CLEANUP: "false"
     steps:
-      - name: echo
-        run: |
-          if [ 0 ]; then
-            echo "cleanup is true $CLEANUP"
-          else
-            echo "cleanup is false $CLEANUP"
-          fi
-        shell: bash
+      - name: test action
+        uses: ./.github/actions/prepare_env
+        with:
+          CLEANUP: true
 
 
 
