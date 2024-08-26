@@ -8,6 +8,8 @@ jobs:
     env:
       CLEANUP: "false"
     steps:
+      - uses: actions/checkout@v4
+
       - name: test action
         uses: ./.github/actions/prepare_env
         with:
