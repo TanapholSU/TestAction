@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: echo
         run: |
-          if [ "$CLEANUP" = "true" ]; then
+          if [ "1" -eq "1"]; then
             echo "cleanup is true"
           else
             echo "cleanup is false $CLEANUP"
