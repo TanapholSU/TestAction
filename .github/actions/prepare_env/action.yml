@@ -16,7 +16,8 @@ runs:
     - name: Define secret
       shell: bash
       run: |
-        echo "::add-mask::${{inputs.CLEANUP}}"
+        CLEANUP="$(echo ${{inputs.CLEANUP}})"
+        echo "::add-mask::$CLEANUP"
         echo "${{ inputs.CLEANUP }}"
               
     - name: greet
