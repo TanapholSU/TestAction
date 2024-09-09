@@ -5,15 +5,20 @@ on: [ push ]
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      CLEANUP: "false"
     steps:
       - uses: actions/checkout@v4
 
+      - name: mask
+        id: test-mask
+        run: |
+          mask=hello
+          echo "::add-mask::$mask"
+          echo "mask=$mask" >> $GITHUB_OUTPUT
+          
       - name: test action
         uses: ./.github/actions/prepare_env
         with:
-          CLEANUP: hello world
+          CLEANUP: ${{ steps.test-mask.outputs.mask }}
 
 
 

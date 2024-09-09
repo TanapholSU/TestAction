@@ -16,7 +16,7 @@ runs:
     - name: Define secret
       shell: bash
       run: |
-        TEST=${{inputs.CLEANUP}}
+        TEST="$(echo ${{inputs.CLEANUP}})"
         echo "::add-mask::$TEST"
         echo "$TEST"
               
