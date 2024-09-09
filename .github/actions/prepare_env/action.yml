@@ -13,17 +13,10 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Deploy enclave 
-      env:
-        CLEANUP: '${{ inputs.CLEANUP }}'
-      run: |
-        if [ "$CLEANUP" = "true" ]; then
-          echo "true"
-        else
-          echo "false !!! $CLEANUP" 
-        fi
+    - name: Define secret
       shell: bash
-
+      run: |
+        echo ${{ inputs.CLEANUP }}
         
     - name: greet
       run: echo "Hello world"
