@@ -17,7 +17,7 @@ runs:
       shell: bash
       run: |
         echo "::add-mask::${{inputs.CLEANUP}}"
-        echo ${{ inputs.CLEANUP }}
+        echo "${{ inputs.CLEANUP }}"
       env:
         
         
